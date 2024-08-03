@@ -6,6 +6,7 @@ body {
   font-family: "Karla", sans-serif;
   margin: 0;
   background-color: rgb(35, 34, 39);
+  user-select: none; 
 }
 
 main {
@@ -49,6 +50,7 @@ main {
   border-radius: 5px;
   border: 1px solid #D5D4D8;
   text-indent: 5px;
+  user-select: text; 
 }
 
 .form--button {
@@ -64,16 +66,20 @@ main {
   margin: auto;
   height: 50px;
 }
-img{
+
+img {
   width: 400px;
   height: 350px;
   border: 2px solid gold;
   display: flex;
   margin: auto;
+  /* Disable all mouse events on the image */
+  pointer-events: none;
 }
 
 .meme--text {
   position: absolute;
+  cursor: grab;
   width: 80%;
   text-align: center;
   left: 50%;
@@ -95,6 +101,10 @@ img{
       0 -2px 0 #000,
       -2px 0 0 #000,
       2px 2px 5px #000;
+}
+
+.meme--text:active {
+  cursor: grabbing;
 }
 
 .bottom {
